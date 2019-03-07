@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>IITbazaar</h1>
+  <p>Welcome to IITbazaar, a website developed by <em>Soham</em>!</p>
+  <h2>Dynamic content</h2>
+  <p>The market presently has the following:</p>
+  <ul>
+    <li><strong>Products:</strong> {{ num_products }}</li>
+    <li><strong>Sellers:</strong> {{ num_sellers }}</li>
+  </ul>
+{% endblock %}
