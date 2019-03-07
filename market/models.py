@@ -16,9 +16,13 @@ class Seller(models.Model):
     phone = PhoneNumberField(null=False, blank=False, unique=True)
     address = models.TextField(max_length=500, null=True)
 
+    def __str__(self):
+        """String for representing the Model object."""
+        return self.name
+
 class Product(models.Model):
     name = models.CharField(max_length=50)
-    price= models.DecimalField(max_digits=8, decimal_places=2)
+    price = models.DecimalField(max_digits=8, decimal_places=2)
     description = models.TextField(max_length=1000, help_text='brief description of the product')
     image_url = models.URLField(max_length=200, null=True, blank=True)
     seller = models.ForeignKey(Seller, on_delete=models.SET_NULL, null=True)

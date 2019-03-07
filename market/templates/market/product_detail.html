@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1> {{ product.name }}</h1>
+    <p><strong>Price:</strong> Rs.{{ product.price }}/-</p>
+    <p><strong>Category:</strong> {% for category in product.category.all %} {{ category }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+    <!-- image url-->
+    <p><strong>Description:</strong> {{ product.description }}</p>
+    <p><strong>Seller:</strong> {{ product.seller }}</p>
+
+{% endblock %}
+ 
