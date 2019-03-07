@@ -27,7 +27,9 @@ class Product(models.Model):
     image_url = models.URLField(max_length=200, null=True, blank=True)
     seller = models.ForeignKey(Seller, on_delete=models.SET_NULL, null=True)
     category = models.ManyToManyField(Category, help_text='Categories for this product')
-    
+    #available = models.BooleanField(default=True)
+    stock = models.PositiveIntegerField(default=1)
+
     def __str__(self):
         """String for representing the Model object."""
         return self.name
