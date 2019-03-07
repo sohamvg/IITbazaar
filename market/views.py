@@ -25,4 +25,11 @@ class ProductListView(generic.ListView):
 
 class ProductDetailView(generic.DetailView):
     model = Product
+
+class SellerListView(generic.ListView):
+    model = Seller
+    #paginate_by = 10
+
+class SellerDetailView(generic.DetailView):
+    model = Seller
     
