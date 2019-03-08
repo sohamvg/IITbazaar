@@ -20,6 +20,11 @@ class Seller(models.Model):
         """String for representing the Model object."""
         return self.name
 
+    def get_absolute_url(self):
+        """Returns the url to access a detail record for this seller."""
+        return reverse('market:seller-detail', args=[str(self.id)])
+
+
 class Product(models.Model):
     name = models.CharField(max_length=50)
     price = models.DecimalField(max_digits=8, decimal_places=2)
@@ -36,5 +41,5 @@ class Product(models.Model):
 
     def get_absolute_url(self):
         """Returns the url to access a detail record for this product."""
-        return reverse('product_detail', args=[str(self.id)])
+        return reverse('market:product-detail', args=[str(self.id)])
 
