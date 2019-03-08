@@ -2,9 +2,9 @@
 
 {% block content %}
   <h1>Products</h1>
-  {% if product_list %}
+  {% if all_products %}
   <ul>
-    {% for product in product_list %}
+    {% for product in all_products %}
       <li>
         <a href="{{ product.get_absolute_url }}">{{ product.name }}</a> (Rs.{{product.price}}/-)
       </li>
