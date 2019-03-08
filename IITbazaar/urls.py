@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import include
+from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('market/',include('market.urls')),
+    url(r'^accounts/', include('accounts.urls')),
 ]
 
 #Add URL maps to redirect the base URL to our application
@@ -28,7 +30,9 @@ urlpatterns += [
     path('', RedirectView.as_view(url='/market/', permanent=True)),
 ]
 
+'''
 #Add Django site authentication urls (for login, logout, password management)
 urlpatterns += [
     path('accounts/', include('django.contrib.auth.urls')),
 ]
+'''
