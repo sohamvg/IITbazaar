@@ -2,11 +2,11 @@
 
 {% block content %}
     <h1> {{ product.name }}</h1>
+    <p><img src="{{ product.image.url }}"/></p>
     <p><strong>Price:</strong> Rs.{{ product.price }}/-</p>
     <p><strong>Category:</strong> {% for category in product.category.all %} {{ category }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
-    <!-- image url-->
     <p><strong>Description:</strong> {{ product.description }}</p>
-    <p><strong>Seller:</strong> <a href="{% url 'seller-detail' product.seller.pk %}">{{ product.seller }}</a></p>
+    <p><strong>Seller:</strong> <a href="{% url 'market:seller-detail' product.seller.pk %}">{{ product.seller }}</a></p>
 
 {% endblock %}
  

@@ -9,7 +9,7 @@
         
         <dl>
         {% for product in seller.product_set.all %}
-          <dt><a href="{% url 'product-detail' product.pk %}">{{product}}</a> (Rs.{{ product.price }}/-)</dt>
+          <dt><a href="{% url 'market:product-detail' product.pk %}">{{product}}</a> (Rs.{{ product.price }}/-)</dt>
         {% endfor %}
         </dl>
         

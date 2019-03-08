@@ -22,6 +22,14 @@ from django.views import generic
 class ProductListView(generic.ListView):
     model = Product
     #paginate_by = 10
+'''
+def product_list(request):
+    all_products = Product.objects.all()
+    context = {
+        'all_products':all_products
+    }
+    return render(request,'market/products.html',context=context)
+'''
 
 class ProductDetailView(generic.DetailView):
     model = Product
