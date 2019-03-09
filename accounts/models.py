@@ -12,7 +12,7 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    userProducts = models.ManyToManyField(Product, blank=True)
+    user_products = models.ManyToManyField(Product, blank=True)
     #stripe_id = models.CharField(max_length=200, null=True, blank=True)
 
     def __str__(self):

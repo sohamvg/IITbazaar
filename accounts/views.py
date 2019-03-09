@@ -1,7 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 from django.contrib.auth.models import User
+from shopping_cart.models import Order
+from .models import Profile
+
 
 # Create your views here.
 
@@ -32,3 +35,12 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('market:index')
+
+def my_profile(request):
+	my_user_profile = Profile.objects.filter(user=request.user).first()
+	my_orders = Order.objects.filter(is_ordered=True, owner=my_user_profile)
+	context = {
+		'my_orders': my_orders
+	}
+
+	return render(request, "accounts:profile.html", context)
