@@ -1,0 +1,32 @@
+{% extends "base_generic.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<section>
+        <div class="col-md-8 col-xs-12">
+                <table class="table">
+                  <tr>
+                    <td><h4>Order Summary</h4></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      {% for item in order.get_cart_items %}
+                        <tr>
+                          <td>{{ item }}</td>
+                          <td>Rs.{{ item.product.price }}</td>
+                        </tr>
+                      {% endfor %}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Order Total</strong> </td>
+                    <td> <strong>Rs.{{ order.get_cart_total }}</strong></td>
+                  </tr>
+                </table>
+                    <form method="POST" action="{% url 'shopping_cart:process_payment' order.id %}">
+                        {% csrf_token %}
+                        <button style="width: 50%;" class="btn btn-warning">PAY</button>
+                    </form>
+            </div>
+            </section>
+{% endblock content %}

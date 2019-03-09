@@ -43,4 +43,4 @@ def my_profile(request):
 		'my_orders': my_orders
 	}
 
-	return render(request, "accounts:profile.html", context)
+	return render(request, "accounts/profile.html", context)

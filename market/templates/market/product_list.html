@@ -7,7 +7,28 @@
     {% for product in product_list %}
       <li>
         <a href="{{ product.get_absolute_url }}">{{ product.name }}</a> (Rs.{{product.price}}/-)
-       
+        <p><img src="{{ product.image.url }}"/></p>
+    <p><strong>Price:</strong> Rs.{{ product.price }}/-</p>
+    <p><strong>Category:</strong> {% for category in product.category.all %} {{ category }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+   
+    <p><strong>Description:</strong> {{ product.description }}</p>
+    <p><strong>Seller:</strong> <a href="{% url 'market:seller-detail' product.seller.pk %}">{{ product.seller }}</a></p>
+    <p>
+        {% if user.is_authenticated %}
+            {% if product in user.profile.user_products.all %}
+                
+                You own this
+                
+                {% elif product in current_order_products %}
+                <a href="{% url 'shopping_cart:order_summary' %}" class="btn btn-warning">Go to Cart</a>
+                
+                {% else %}
+                <a href="{% url 'shopping_cart:add_to_cart' product.id %}" class="btn btn-warning">Add to Cart</a>
+                {% endif %}
+        {% else %}
+            Login to buy!        
+        {% endif %}        
+    </p>
       </li>
     {% endfor %}
   </ul>
