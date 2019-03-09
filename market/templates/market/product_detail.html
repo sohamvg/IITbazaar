@@ -5,10 +5,7 @@
     <p><img src="{{ product.image.url }}"/></p>
     <p><strong>Price:</strong> Rs.{{ product.price }}/-</p>
     <p><strong>Category:</strong> {% for category in product.category.all %} {{ category }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
-<<<<<<< HEAD
    
-=======
->>>>>>> 685535112a6ee3ad4eb5f29d984151cfa0016d2c
     <p><strong>Description:</strong> {{ product.description }}</p>
     <p><strong>Seller:</strong> <a href="{% url 'market:seller-detail' product.seller.pk %}">{{ product.seller }}</a></p>
 

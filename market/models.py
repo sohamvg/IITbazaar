@@ -21,11 +21,7 @@ class Seller(models.Model):
         return self.name
 
     def get_absolute_url(self):
-<<<<<<< HEAD
         """Returns the url to access a detail record for this product."""
-=======
-        """Returns the url to access a detail record for this seller."""
->>>>>>> 685535112a6ee3ad4eb5f29d984151cfa0016d2c
         return reverse('market:seller-detail', args=[str(self.id)])
 
 
