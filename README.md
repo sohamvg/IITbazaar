@@ -1,6 +1,5 @@
 # IITbazaar
-# (Not completed yet)
-A web portal to buy and sell items in the campus made using django ( will be hosted on heroku soon :D ). Check at 13th March for complete experience.
+A web portal to buy and sell items in the campus made using django ( it is hosted on heroku at http://iit-bazaar.herokuapp.com/ ). Check at 13th March for complete experience.
 # To install dependencies
 * django and python 3.6+ should be installed.
 ```
@@ -10,7 +9,7 @@ pip install phonenumbers
 pip install django-allauth
 pip install pillow
 ```
-# To run the website
+# To run the website locally
 From terminal, make sure you are in the same directory as manage.py
 ```
 python manage.py makemigrations
