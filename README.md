@@ -5,6 +5,9 @@ A web portal to buy and sell items in the campus made using django ( will be hos
 * django and python 3.6+ should be installed.
 ```
 pip install django-reset-migrations
+pip install django-phonenumber-field
+pip install phonenumbers
+pip install django-allauth
 ```
 # To run the website
 From terminal, make sure you are in the same directory as manage.py
