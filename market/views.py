@@ -4,6 +4,9 @@ from django.shortcuts import render
 
 from shopping_cart.models import Order
 from market.models import Product, Seller, Category
+from accounts.models import Profile
+from django.contrib.auth.models import User
+from django.contrib import auth
 
 # Create your views here.
 
@@ -25,17 +28,33 @@ from django.views import generic
 
 def product_list(request):
     object_list = Product.objects.all()
-    filtered_orders = Order.objects.filter(owner=request.user.profile, is_ordered=False)
-    current_order_products = []
-    if filtered_orders.exists():
-    	user_order = filtered_orders[0]
-    	user_order_items = user_order.items.all()
-    	current_order_products = [product.product for product in user_order_items]
+    '''
+    queryset_list = Product.objects.active()
+    if request.user.is_staff or request.user.is_superuser:
+        queryset_list = Product.objects.all()
 
-    context = {
-        'product_list': object_list,
-        'current_order_products': current_order_products
-    }
+    query = request.GET.get("q")
+    if query:
+        queryset_list = queryset_list.filter(name__icontains=query)
+    '''
+
+    if request.user.is_authenticated:
+        filtered_orders = Order.objects.filter(owner=request.user.profile, is_ordered=False)
+        current_order_products = []
+        if filtered_orders.exists():
+            user_order = filtered_orders[0]
+            user_order_items = user_order.items.all()
+            current_order_products = [product.product for product in user_order_items]
+
+        context = {
+            'product_list': object_list,
+            'current_order_products': current_order_products
+        }
+
+    else:
+        context = {
+            'product_list': object_list,
+        }
 
     return render(request, "market/product_list.html", context)
 
