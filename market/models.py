@@ -1,9 +1,19 @@
+from __future__ import unicode_literals
+
 from django.db import models
+from django.conf import settings
+from django.utils import timezone
 from django.urls import reverse # Used to generate URLs by reversing the URL patterns
 from phonenumber_field.modelfields import PhoneNumberField
 
 # Create your models here.
 
+'''
+class ProductManager(models.Manager):
+    def active(self, *args, **kwargs):
+        # Post.objects.all() = super(PostManager, self).all()
+        return super(ProductManager, self).filter(timestamp__lte=timezone.now())
+'''
 class Category(models.Model):
     name = models.CharField(max_length=50, help_text='Product category')
 
@@ -34,6 +44,9 @@ class Product(models.Model):
     category = models.ManyToManyField(Category, help_text='Categories for this product', blank=True)
     #available = models.BooleanField(default=True)
     stock = models.PositiveIntegerField(default=1)
+    # Manager
+    #objects = ProductManager()
+
 
     def __str__(self):
         """String for representing the Model object."""
