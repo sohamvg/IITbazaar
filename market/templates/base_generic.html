@@ -17,7 +17,7 @@
         <ul class="sidebar-nav">
           <li><a href="{% url 'market:index' %}">Home</a></li>
           <li><a href="{% url 'market:products' %}">All products</a></li>
-          <li><a href="">All categories</a></li>
+          <li><a href="{% url 'market:categories' %}">All categories</a></li>
           <li><a href="{% url 'market:sellers' %}">All sellers</a></li>
           {% if user.is_authenticated %}
             <li>User: {{ user.get_username }}</li>

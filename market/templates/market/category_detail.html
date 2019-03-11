@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>{{ category.name }}</h1>
+    
+    <div style="margin-left:20px;margin-top:20px">
+        <h4>Products</h4>
+        
+        <dl>
+        {% for product in category.product_set.all %}
+          <dt><a href="{% url 'market:product-detail' product.pk %}">{{product}}</a> (Rs.{{ product.price }}/-)</dt>
+        {% endfor %}
+        </dl>
+        
+    </div>
+{% endblock %}

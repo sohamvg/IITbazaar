@@ -63,8 +63,6 @@ def product_list(request):
             'product_list': object_list,
         }
 
-    
-
     return render(request, "market/product_list.html", context)
 
 class ProductDetailView(generic.DetailView):
@@ -76,6 +74,24 @@ class SellerListView(generic.ListView):
 
 class SellerDetailView(generic.DetailView):
     model = Seller
+
+def category_list(request):
+    object_list = Category.objects.all()
+
+    if 'search' in request.GET:
+        search_item = request.GET['search']
+        object_list = Category.objects.filter(name__icontains=search_item)
+
+    context = {
+            'category_list': object_list,
+        }
+
+    return render(request, "market/category_list.html", context)
+
+class CategoryDetailView(generic.DetailView):
+    model = Category
+
+
 
 '''
 def search(request):

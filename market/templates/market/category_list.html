@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Categories</h1>
+  <form method="GET" action="">
+    <input type="search" name="search" placeholder="Search categories" value="{{ search_term }}"/>
+    <input type="submit" value="Search"/>
+  </form>
+  {% if category_list %}
+  <ul>
+    {% for category in category_list %}
+      <li>
+        <a href="{{ category.get_absolute_url }}">{{ category.name }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>No categories currently</p>
+  {% endif %}       
+{% endblock %}

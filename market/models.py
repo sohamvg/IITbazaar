@@ -21,6 +21,10 @@ class Category(models.Model):
         """String for representing the Model object."""
         return self.name
 
+    def get_absolute_url(self):
+        """Returns the url to access a detail record for this category."""
+        return reverse('market:category-detail', args=[str(self.id)])
+
 class Seller(models.Model):
     name = models.CharField(max_length=60)
     phone = PhoneNumberField(null=False, blank=True, unique=True)
@@ -31,7 +35,7 @@ class Seller(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        """Returns the url to access a detail record for this product."""
+        """Returns the url to access a detail record for this seller."""
         return reverse('market:seller-detail', args=[str(self.id)])
 
 
