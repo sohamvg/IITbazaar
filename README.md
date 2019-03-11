@@ -8,6 +8,7 @@ pip install django-reset-migrations
 pip install django-phonenumber-field
 pip install phonenumbers
 pip install django-allauth
+pip install pillow
 ```
 # To run the website
 From terminal, make sure you are in the same directory as manage.py
