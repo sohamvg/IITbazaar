@@ -17,3 +17,10 @@ python manage.py migrate
 python manage.py runserver
 ```
 Website will be hosted locally on http://127.0.0.1:8000/
+#To try the site
+**Admin account** at http://iit-bazaar.herokuapp.com/admin
+username : admin
+password : pass_admin
+**User account**
+username : user_1
+password : password_1
