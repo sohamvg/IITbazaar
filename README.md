@@ -29,5 +29,5 @@ Website will be hosted locally on http://127.0.0.1:8000/
 username : admin   
 password : pass_admin    
 **User accounts**
-user_1 : password_1.    
-user_2 : password_2.   
+user_1 : password_1   
+user_2 : password_2     
