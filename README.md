@@ -2,6 +2,7 @@
 A web portal to buy and sell items in the campus made using django ( it is hosted on heroku at http://iit-bazaar.herokuapp.com ). 
 # Main Features
 * Login/Signup using your username and password. A User profile is created when you sign up. You can view items without logging in but you must be logged in to buy.
+* When you sign in, you are directly logged in.
 * Search bar for products and categories
 * View details of products, categories and sellers.
 * Shopping cart : add items to shopping cart to buy. You can also edit(add/delete) your shopping cart on the go. After this, you can checkout and then redirected to the payent page from where proceed to buy items in your shopping cart.
