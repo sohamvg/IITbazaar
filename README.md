@@ -1,5 +1,5 @@
 # IITbazaar
-A web portal to buy and sell items in the campus made using django ( it is hosted on heroku at http://iit-bazaar.herokuapp.com/ ). 
+A web portal to buy and sell items in the campus made using django ( it is hosted on heroku at http://iit-bazaar.herokuapp.com ). 
 # Main Features
 * Login/Signup using your username and password. A User profile is created when you sign up. You can view items without logging in but you must be logged in to buy.
 * Search bar for products and categories
