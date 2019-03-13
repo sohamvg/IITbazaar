@@ -28,6 +28,6 @@ Website will be hosted locally on http://127.0.0.1:8000/
 **Admin account** at http://iit-bazaar.herokuapp.com/admin
 username : admin   
 password : pass_admin    
-**User account**
-username : user_1    
-password : password_1   
+**User accounts**
+user_1 : password_1.    
+user_2 : password_2.   
