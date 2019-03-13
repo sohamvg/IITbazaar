@@ -5,7 +5,7 @@ A web portal to buy and sell items in the campus made using django ( it is hoste
 * Search bar for products and categories
 * View details of products, categories and sellers.
 * Shopping cart : add items to shopping cart to buy. You can also edit(add/delete) your shopping cart. After this, you checkout and proceed to buy items in your shopping cart.
-* A unique transaction id is also generated for your purchases.
+* A unique transaction id is also generated for your purchases. Date and time of all transactions is also stored in the database.
 * Admin can see records of all users, products, sellers, order history etc.
 * Security measures : Your password can't be too common or have less than 8 letters, unique transaction id, use of csrf token in forms
 # To install dependencies
